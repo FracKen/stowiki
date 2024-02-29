@@ -10,7 +10,7 @@ import (
 
 // processAPICall is a function that takes in data of type pointer to STOWiki and a slice of strings (tables).
 // It processes an API call for each table in the tables slice.
-func processAPICall(data *STOWiki, tables []string) {
+func ProcessAPICall(data *STOWiki, tables []string) {
 	// Loop through each table in the tables slice.
 	for _, table := range tables {
 		// Initialize an empty byte slice for the body of the HTTP response.

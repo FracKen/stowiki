@@ -27,7 +27,7 @@ import (
 // saveToFile is a function that takes a filename and data of type STOWiki.
 // It marshals the data to JSON and writes it to a file with the given filename.
 // If an error occurs during this process, it returns the error.
-func saveToFile(filename string, data STOWiki) error {
+func SaveToFile(filename string, data STOWiki) error {
 	// Marshal the data into JSON, with indents for readability.
 	// If an error occurs, print an error message and return the error.
 	newBody, err := json.MarshalIndent(data, "", " ")
