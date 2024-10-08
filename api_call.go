@@ -1,6 +1,7 @@
 package stowiki
 
 import (
+	"fmt"
 	"net/http"
 	"net/url"
 	"strings"
@@ -63,7 +64,7 @@ func createQuery(table string) string {
 	} else if table == "StarshipTraits" {
 		// These are the fields to be queried for the "StarshipTraits" table.
 		fields = []string{
-			"StarshipTraits._pageName",
+			"StarshipTraits._pageName=Page",
 			"StarshipTraits.name",
 			"StarshipTraits.short",
 			"StarshipTraits.type",
@@ -96,6 +97,7 @@ func createQuery(table string) string {
 // initiates a GET request to that URL, and returns the server's response and any error that might have occurred.
 func makeRequest(url string) (*http.Response, error) {
 	// Create a new HTTP request using the GET method.
+	fmt.Print(url)
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		// If an error occurred while creating the request, return nil and the error.
